@@ -170,7 +170,38 @@ img {vertical-align: middle;}
   <a class="prev" onclick="plusSlides(-1)">❮</a>
   <a class="next" onclick="plusSlides(1)">❯</a>
 
+
+
+  <div class="full"  style="text-align: right; padding: 1rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-maximize" onclick="openFullscreen();" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <polyline points="16 4 20 4 20 8" />
+        <line x1="14" y1="10" x2="20" y2="4" />
+        <polyline points="8 20 4 20 4 16" />
+        <line x1="4" y1="20" x2="10" y2="14" />
+        <polyline points="16 20 20 20 20 16" />
+        <line x1="14" y1="14" x2="20" y2="20" />
+        <polyline points="8 4 4 4 4 8" />
+        <line x1="4" y1="4" x2="10" y2="10" />
+        
+      </svg>
+    
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-minimize" onclick="closeFullscreen()" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <polyline points="5 9 9 9 9 5" />
+        <line x1="3" y1="3" x2="9" y2="9" />
+        <polyline points="5 15 9 15 9 19" />
+        <line x1="3" y1="21" x2="9" y2="15" />
+        <polyline points="19 9 15 9 15 5" />
+        <line x1="15" y1="9" x2="21" y2="3" />
+        <polyline points="19 15 15 15 15 19" />
+        <line x1="15" y1="15" x2="21" y2="21" />
+      </svg>
 </div>
+</div>
+
+
+
 <br>
 
 <div style="text-align:center">
@@ -215,6 +246,27 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 8000); // Change image every 8 seconds
+}
+
+var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
 }
 </script>
 
