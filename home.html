@@ -3,6 +3,10 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+html{
+  margin: 0;
+}
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;
     height: 100%;
@@ -204,7 +208,7 @@ img {vertical-align: middle;}
 
 <br>
 
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span>   
@@ -214,7 +218,7 @@ img {vertical-align: middle;}
   <span class="dot" onclick="currentSlide(7)"></span> 
   <span class="dot" onclick="currentSlide(8)"></span> 
 
-</div>
+</div> -->
 
 
 <script>
@@ -234,17 +238,17 @@ function currentSlide(n) {
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
+  //let dots = document.getElementsByClassName("dot");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
+  //for (i = 0; i < dots.length; i++) {
+   // dots[i].className = dots[i].className.replace(" active", "");
+  //}
   slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+ // dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 8000); // Change image every 8 seconds
 }
 
